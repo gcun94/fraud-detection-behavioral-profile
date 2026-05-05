@@ -1,0 +1,26 @@
+# Dados
+data/raw/
+data/processed/
+
+# Modelos serializados
+outputs/models/
+
+# Ambiente virtual
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Arquivos de dados
+*.csv
+*.zip
+*.parquet
+
+# Sistema
+.DS_Store
+Thumbs.db
