@@ -2,7 +2,7 @@
 
 > Pipeline integrada de Machine Learning que combina segmentação comportamental não supervisionada com detecção de fraude supervisionada em transações de cartão de crédito.
 
----
+\---
 
 ## 📌 Problema
 
@@ -12,7 +12,7 @@ Instituições financeiras perdem bilhões anualmente com fraudes em cartão de 
 
 Sem contexto comportamental, o modelo não consegue distinguir esses casos — gerando tanto falsos positivos (bloqueios indevidos) quanto falsos negativos (fraudes não detectadas).
 
----
+\---
 
 ## 💡 Solução
 
@@ -26,23 +26,23 @@ Modelo de classificação binária que usa o perfil comportamental do cliente co
 
 **Hipótese testável:** um modelo de fraude que conhece o perfil do cliente performa melhor do que um modelo que trata todos os clientes igualmente.
 
----
+\---
 
 ## 📊 Dataset
 
-| Atributo | Detalhe |
-|---|---|
-| **Fonte** | [Credit Card Transactions Fraud Detection — Kaggle](https://www.kaggle.com/datasets/kartik2112/fraud-detection) |
-| **Volume** | ~1,8 milhão de transações |
-| **Período** | Janeiro 2019 — Dezembro 2020 |
-| **Licença** | Creative Commons Zero (CC0) |
-| **Target** | `is_fraud` (0 = legítima, 1 = fraude) |
+|Atributo|Detalhe|
+|-|-|
+|**Fonte**|[Credit Card Transactions Fraud Detection — Kaggle](https://www.kaggle.com/datasets/kartik2112/fraud-detection)|
+|**Volume**|\~1,8 milhão de transações|
+|**Período**|Janeiro 2019 — Dezembro 2020|
+|**Licença**|Creative Commons Zero (CC0)|
+|**Target**|`is\_fraud` (0 = legítima, 1 = fraude)|
 
 **Variáveis disponíveis:** timestamp, valor da transação, categoria do comerciante, localização do cliente e comerciante, gênero, profissão, idade.
 
 > ⚠️ O dataset não está incluído neste repositório. Baixe diretamente no Kaggle e coloque os arquivos em `data/raw/`.
 
----
+\---
 
 ## 🏗️ Estrutura do Projeto
 
@@ -54,10 +54,10 @@ fraud-detection-behavioral-profile/
 │   └── processed/                    ← dados após limpeza e transformações
 │
 ├── notebooks/
-│   ├── 01_eda.ipynb                  ← Análise Exploratória
-│   ├── 02_preprocessing.ipynb        ← Limpeza e Feature Engineering
-│   ├── 03_clustering.ipynb           ← Módulo 1: Segmentação Comportamental
-│   └── 04_fraud_detection.ipynb      ← Módulo 2: Detecção de Fraude
+│   ├── 01\_eda.ipynb                  ← Análise Exploratória
+│   ├── 02\_preprocessing.ipynb        ← Limpeza e Feature Engineering
+│   ├── 03\_clustering.ipynb           ← Módulo 1: Segmentação Comportamental
+│   └── 04\_fraud\_detection.ipynb      ← Módulo 2: Detecção de Fraude
 │
 ├── src/
 │   └── utils.py                      ← funções reutilizáveis entre notebooks
@@ -71,61 +71,67 @@ fraud-detection-behavioral-profile/
 └── README.md
 ```
 
----
+\---
 
 ## 🔬 Metodologia
 
-### 1. Análise Exploratória (EDA)
-- Distribuição do target (desbalanceamento de classes)
-- Comportamento temporal das transações
-- Análise por categoria, valor e localização
-- Identificação de missing values e outliers
+### 1\. Análise Exploratória (EDA)
 
-### 2. Pré-processamento e Feature Engineering
-- Tratamento de valores ausentes e outliers
-- Agregações por cliente: ticket médio, frequência, variação geográfica, horários atípicos
-- Encoding de variáveis categóricas
-- Normalização para o clustering
+* Distribuição do target (desbalanceamento de classes)
+* Comportamento temporal das transações
+* Análise por categoria, valor e localização
+* Identificação de missing values e outliers
 
-### 3. Módulo 1 — Segmentação Comportamental
-- **Algoritmo:** K-Means
-- **Validação do número de clusters:** Elbow Method + Silhouette Score
-- **Visualização:** PCA 2D dos clusters
-- **Interpretação:** perfil de cada grupo (comportamento esperado)
+### 2\. Pré-processamento e Feature Engineering
 
-### 4. Módulo 2 — Detecção de Fraude
-- **Baseline:** Regressão Logística (sem perfil comportamental)
-- **Modelos comparados:** Random Forest · XGBoost
-- **Tratamento do desbalanceamento:** SMOTE
-- **Métricas:** AUC-ROC · Precision-Recall · F1-Score · Matriz de Confusão
-- **Interpretabilidade:** SHAP values
+* Tratamento de valores ausentes e outliers
+* Agregações por cliente: ticket médio, frequência, variação geográfica, horários atípicos
+* Encoding de variáveis categóricas
+* Normalização para o clustering
 
-### 5. Comparação e Validação da Hipótese
-- Modelo sem cluster vs. modelo com cluster como feature
-- Análise do impacto do perfil comportamental na performance
-- Threshold tuning orientado ao custo do erro de negócio
+### 3\. Módulo 1 — Segmentação Comportamental
 
----
+* **Algoritmo:** K-Means
+* **Validação do número de clusters:** Elbow Method + Silhouette Score
+* **Visualização:** PCA 2D dos clusters
+* **Interpretação:** perfil de cada grupo (comportamento esperado)
+
+### 4\. Módulo 2 — Detecção de Fraude
+
+* **Baseline:** Regressão Logística (sem perfil comportamental)
+* **Modelos comparados:** Random Forest · XGBoost
+* **Tratamento do desbalanceamento:** SMOTE
+* **Métricas:** AUC-ROC · Precision-Recall · F1-Score · Matriz de Confusão
+* **Interpretabilidade:** SHAP values
+
+### 5\. Comparação e Validação da Hipótese
+
+* Modelo sem cluster vs. modelo com cluster como feature
+* Análise do impacto do perfil comportamental na performance
+* Threshold tuning orientado ao custo do erro de negócio
+
+\---
 
 ## 📈 Resultados
 
 > Tabela atualizada após execução completa do projeto.
 
-| Modelo | AUC-ROC | F1-Score | Precision | Recall |
-|---|---|---|---|---|
-| Baseline — Regressão Logística | — | — | — | — |
-| Random Forest (sem cluster) | — | — | — | — |
-| XGBoost (sem cluster) | — | — | — | — |
-| **XGBoost (com perfil comportamental)** | **—** | **—** | **—** | **—** |
+|Modelo|AUC-ROC|F1-Score|Precision|Recall|
+|-|-|-|-|-|
+|Baseline — Regressão Logística|—|—|—|—|
+|Random Forest (sem cluster)|—|—|—|—|
+|XGBoost (sem cluster)|—|—|—|—|
+|**XGBoost (com perfil comportamental)**|**—**|**—**|**—**|**—**|
 
----
+\---
 
 ## 🛠️ Como Reproduzir
 
 ### Pré-requisitos
-- Python 3.9+
-- Git instalado
-- Conta no Kaggle
+
+* Python 3.9+
+* Git instalado
+* Conta no Kaggle
 
 ### Passo a passo
 
@@ -136,7 +142,7 @@ cd fraud-detection-behavioral-profile
 
 # 2. Criar e ativar ambiente virtual (Windows)
 python -m venv venv
-venv\Scripts\activate
+venv\\Scripts\\activate
 
 # 3. Instalar dependências
 pip install -r requirements.txt
@@ -151,23 +157,23 @@ jupyter notebook
 
 Execute os notebooks na sequência: `01 → 02 → 03 → 04`
 
----
+\---
 
 ## 🧠 Tecnologias
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue)
-![Pandas](https://img.shields.io/badge/Pandas-2.0+-green)
-![Scikit--learn](https://img.shields.io/badge/Scikit--learn-1.3+-orange)
-![XGBoost](https://img.shields.io/badge/XGBoost-2.0+-red)
-![SHAP](https://img.shields.io/badge/SHAP-0.43+-purple)
+!\[Python](https://img.shields.io/badge/Python-3.9+-blue)
+!\[Pandas](https://img.shields.io/badge/Pandas-2.0+-green)
+!\[Scikit--learn](https://img.shields.io/badge/Scikit--learn-1.3+-orange)
+!\[XGBoost](https://img.shields.io/badge/XGBoost-2.0+-red)
+!\[SHAP](https://img.shields.io/badge/SHAP-0.43+-purple)
 
-- **Manipulação de dados:** Pandas · NumPy
-- **Visualização:** Matplotlib · Seaborn
-- **Machine Learning:** Scikit-learn · XGBoost · Imbalanced-learn
-- **Interpretabilidade:** SHAP
-- **Ambiente:** Jupyter Notebook
+* **Manipulação de dados:** Pandas · NumPy
+* **Visualização:** Matplotlib · Seaborn
+* **Machine Learning:** Scikit-learn · XGBoost · Imbalanced-learn
+* **Interpretabilidade:** SHAP
+* **Ambiente:** Jupyter Notebook
 
----
+\---
 
 ## 📁 Requirements
 
@@ -183,20 +189,21 @@ shap>=0.43.0
 jupyter>=1.0.0
 ```
 
----
+\---
 
 ## 👤 Autor
 
-**Seu Nome**
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/seuusuario)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/seuusuario)
+**Gustavo Simões da Cunha**
+\[[!\[LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/seuusuario)](https://www.linkedin.com/in/gustavo-s-cunha-516102181/)
+\[[!\[GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/seuusuario)](https://github.com/gcun94)
 
----
+\---
 
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
----
+\---
 
 *Projeto desenvolvido como parte de portfólio acadêmico e profissional em Ciência de Dados.*
+
