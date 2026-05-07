@@ -1,12 +1,12 @@
-# 🔍 Detecção de Fraude com Perfil Comportamental de Clientes
+# Detecção de Fraude com Perfil Comportamental de Clientes
 
 > Pipeline integrada de Machine Learning que combina segmentação comportamental não supervisionada com detecção de fraude supervisionada em transações de cartão de crédito.
 
 \---
 
-## 📌 Problema
+## Problema
 
-Instituições financeiras perdem bilhões anualmente com fraudes em cartão de crédito. Modelos tradicionais de detecção tratam todos os clientes com o mesmo padrão de normalidade — ignorando que uma transação suspeita para um perfil pode ser completamente normal para outro.
+Instituições financeiras perdem bilhões anualmente com fraudes em cartão de crédito. Modelos tradicionais de detecção tratam todos os clientes com o mesmo padrão de normalidade, ignorando que uma transação suspeita para um perfil pode ser completamente normal para outro.
 
 **Exemplo:** Uma compra de R$ 5.000 às 3h da manhã no exterior é um sinal crítico de fraude para um cliente com histórico de compras locais e de baixo valor. Para um executivo com histórico de viagens internacionais frequentes, é uma transação comum.
 
@@ -14,7 +14,7 @@ Sem contexto comportamental, o modelo não consegue distinguir esses casos — g
 
 \---
 
-## 💡 Solução
+## Solução
 
 Pipeline de dois módulos integrados:
 
@@ -28,7 +28,7 @@ Modelo de classificação binária que usa o perfil comportamental do cliente co
 
 \---
 
-## 📊 Dataset
+## Dataset
 
 |Atributo|Detalhe|
 |-|-|
@@ -44,7 +44,7 @@ Modelo de classificação binária que usa o perfil comportamental do cliente co
 
 \---
 
-## 🏗️ Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 fraud-detection-behavioral-profile/
@@ -73,7 +73,7 @@ fraud-detection-behavioral-profile/
 
 \---
 
-## 🔬 Metodologia
+## Metodologia
 
 ### 1\. Análise Exploratória (EDA)
 
@@ -112,7 +112,7 @@ fraud-detection-behavioral-profile/
 
 \---
 
-## 📈 Resultados
+## Resultados
 
 > Tabela atualizada após execução completa do projeto.
 
@@ -125,7 +125,7 @@ fraud-detection-behavioral-profile/
 
 \---
 
-## 🛠️ Como Reproduzir
+## Como Reproduzir
 
 ### Pré-requisitos
 
@@ -159,13 +159,13 @@ Execute os notebooks na sequência: `01 → 02 → 03 → 04`
 
 \---
 
-## 🧠 Tecnologias
+## Tecnologias
 
-!\[Python](https://img.shields.io/badge/Python-3.9+-blue)
-!\[Pandas](https://img.shields.io/badge/Pandas-2.0+-green)
-!\[Scikit--learn](https://img.shields.io/badge/Scikit--learn-1.3+-orange)
-!\[XGBoost](https://img.shields.io/badge/XGBoost-2.0+-red)
-!\[SHAP](https://img.shields.io/badge/SHAP-0.43+-purple)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.0+-green)](https://pandas.pydata.org/)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3+-orange)](https://scikit-learn.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-2.0+-red)](https://xgboost.readthedocs.io/)
+[![SHAP](https://img.shields.io/badge/SHAP-0.43+-purple)](https://shap.readthedocs.io/)
 
 * **Manipulação de dados:** Pandas · NumPy
 * **Visualização:** Matplotlib · Seaborn
@@ -175,7 +175,7 @@ Execute os notebooks na sequência: `01 → 02 → 03 → 04`
 
 \---
 
-## 📁 Requirements
+## Requirements
 
 ```
 pandas>=2.0.0
@@ -191,15 +191,14 @@ jupyter>=1.0.0
 
 \---
 
-## 👤 Autor
+## Autor
 
 **Gustavo Simões da Cunha**
-\[[!\[LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/seuusuario)](https://www.linkedin.com/in/gustavo-s-cunha-516102181/)
-\[[!\[GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/seuusuario)](https://github.com/gcun94)
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/gustavo-s-cunha-516102181/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/gcun94)
 \---
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
