@@ -10,7 +10,7 @@ Instituições financeiras perdem bilhões anualmente com fraudes em cartão de 
 
 **Exemplo:** Uma compra de R$ 5.000 às 3h da manhã no exterior é um sinal crítico de fraude para um cliente com histórico de compras locais e de baixo valor. Para um executivo com histórico de viagens internacionais frequentes, é uma transação comum.
 
-Sem contexto comportamental, o modelo não consegue distinguir esses casos — gerando tanto falsos positivos (bloqueios indevidos) quanto falsos negativos (fraudes não detectadas).
+Sem contexto comportamental, o modelo não consegue distinguir esses casos, assim gerando tanto falsos positivos (bloqueios indevidos) quanto falsos negativos (fraudes não detectadas).
 
 \---
 
@@ -34,7 +34,7 @@ Modelo de classificação binária que usa o perfil comportamental do cliente co
 |-|-|
 |**Fonte**|[Credit Card Transactions Fraud Detection — Kaggle](https://www.kaggle.com/datasets/kartik2112/fraud-detection)|
 |**Volume**|\~1,8 milhão de transações|
-|**Período**|Janeiro 2019 — Dezembro 2020|
+|**Período**|Janeiro 2019 a junho 2019 — junho 2020 a Dezembro 2020|
 |**Licença**|Creative Commons Zero (CC0)|
 |**Target**|`is\_fraud` (0 = legítima, 1 = fraude)|
 
