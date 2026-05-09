@@ -34,7 +34,7 @@ Modelo de classificação binária que usa o perfil comportamental do cliente co
 |-|-|
 |**Fonte**|[Credit Card Transactions Fraud Detection — Kaggle](https://www.kaggle.com/datasets/kartik2112/fraud-detection)|
 |**Volume**|\~1,8 milhão de transações|
-|**Período**|Janeiro 2019 a junho 2019 — junho 2020 a Dezembro 2020|
+|**Período**|Janeiro 2019  Dezembro 2020|
 |**Licença**|Creative Commons Zero (CC0)|
 |**Target**|`is\_fraud` (0 = legítima, 1 = fraude)|
 
